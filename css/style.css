@@ -186,7 +186,7 @@ h1, h2 { font-family: 'Cinzel Decorative', cursive; }
     
     /* Espacios reducidos para que el pase quepa completo en el celular */
     gap: 12px; 
-    padding: 18px 15px; 
+    padding: 20px 15px; 
     
     /* Diseño visual */
     border: 1px solid rgba(191, 149, 63, 0.25); /* Línea dorada sutil */
@@ -205,7 +205,7 @@ h1, h2 { font-family: 'Cinzel Decorative', cursive; }
     inset: 0;
     /* Asegúrate de que el nombre del archivo en tu carpeta 'img' sea zapatilla.png */
     background-image: url('../img/zapatilla1.png'); 
-    background-size: 50%; /* Tamaño elegante */
+    background-size: 70%; /* Tamaño elegante */
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0.15; /* Muy tenue para no tapar el texto */
@@ -806,7 +806,7 @@ section {
 @media (max-width: 480px) {
     /* La tarjeta del pase */
     .pass-container { 
-        width: 90% !important; /* Se ensancha un poquito más para aprovechar el espacio */
+        width: 92% !important; /* Se ensancha un poquito más para aprovechar el espacio */
         top: 48% !important;
         transition: opacity 0.5s ease 1.7s, transform 0.5s ease 1.7s, visibility 0s linear 1.7s; /* Animación de cierre suave */
     }
@@ -861,11 +861,12 @@ section {
     .pass-info-grid { 
         grid-template-columns: 1fr 1fr !important; /* Una sola columna */
         gap: 8px !important; /* Sin huecos */
+        margin-bottom: 5px !important;
     }
     
     /* Cada dato de la lista */
     .pass-data-item { 
-        padding: 12px 0; /* Espacio arriba y abajo de cada dato */
+        padding: 8px 5px !important; /* Espacio arriba y abajo de cada dato */
         border-bottom: none !important;/* Línea dorada divisoria */
     }
     

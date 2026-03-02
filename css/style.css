@@ -185,13 +185,13 @@ h1, h2 { font-family: 'Cinzel Decorative', cursive; }
     text-align: center;
     
     /* Espacios reducidos para que el pase quepa completo en el celular */
-    gap: 15px; 
-    padding: 20px 15px; 
+    gap: 12px; 
+    padding: 18px 15px; 
     
     /* Diseño visual */
     border: 1px solid rgba(191, 149, 63, 0.25); /* Línea dorada sutil */
     border-radius: 15px; 
-    background: rgba(0, 26, 51, 0.4); /* Fondo oscuro para que resalte la zapatilla */
+    background: rgba(0, 26, 51, 0.5); /* Fondo oscuro para que resalte la zapatilla */
     
     height: auto;
     box-sizing: border-box; /* Mantiene el tamaño exacto sin deformarse */
@@ -205,10 +205,10 @@ h1, h2 { font-family: 'Cinzel Decorative', cursive; }
     inset: 0;
     /* Asegúrate de que el nombre del archivo en tu carpeta 'img' sea zapatilla.png */
     background-image: url('../img/zapatilla1.png'); 
-    background-size: 55%; /* Tamaño elegante */
+    background-size: 50%; /* Tamaño elegante */
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.12; /* Muy tenue para no tapar el texto */
+    opacity: 0.15; /* Muy tenue para no tapar el texto */
     z-index: -1;
     pointer-events: none;
 }
@@ -323,16 +323,16 @@ h1, h2 { font-family: 'Cinzel Decorative', cursive; }
     display: grid; /* Activa la cuadrícula */
     grid-template-columns: 1fr 1fr; /* Divide en 3 columnas iguales */
     width: 100%; /* Todo el ancho */
-    border-top: 1px solid rgba(191, 149, 63, 0.2); /* Línea divisoria de arriba */
-    padding-top: 25px; /* Espacio después de la línea */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea divisoria de arriba */
+    padding-top: 15px; /* Espacio después de la línea */
     gap: 15px; /* Espacio entre columnas */
-    margin-bottom: 30px;
+    margin-bottom: 5px; /* Pegamos el botón más arriba para que quepa */
 }
 
 .pass-data-item { 
     text-align: center; /* Centra cada dato */
     background: rgba(132, 182, 244, 0.1); 
-    padding: 10px; 
+    padding: 8px 5px; /* Compactamos los cuadros individuales */
     border-radius: 8px;
 }
 
@@ -806,19 +806,20 @@ section {
 @media (max-width: 480px) {
     /* La tarjeta del pase */
     .pass-container { 
-        width: 92%; /* Se ensancha un poquito más para aprovechar el espacio */
+        width: 90% !important; /* Se ensancha un poquito más para aprovechar el espacio */
+        top: 48% !important;
         transition: opacity 0.5s ease 1.7s, transform 0.5s ease 1.7s, visibility 0s linear 1.7s; /* Animación de cierre suave */
     }
     
     .pass-inner-border { 
-        padding: 25px 15px; /* Menos espacio adentro para que quepa todo */
-        gap: 15px; /* Menos separación entre bloques */
+        padding: 15px 10px; /* Menos espacio adentro para que quepa todo */
+        gap: 8px; /* Menos separación entre bloques */
     }
     
     /* Nombre del invitado en celular */
     .guest-name { 
-        font-size: 1.2rem !important; /* Letra más chica */
-        margin-bottom: 10px !important; /* Menos margen */
+        font-size: 1.1rem !important; /* Letra más chica */
+        margin-bottom: 5px !important; /* Menos margen */
     }
 
     .accordion-content p { color: var(--texto-cenicienta); font-size: 0.85rem; margin-bottom: 15px; }
@@ -853,19 +854,19 @@ section {
 
     /* Tu nombre "Jennifer Arlete" en el pase */
     .pass-title { 
-        font-size: 2.5rem !important; /* Letra reducida */
+        font-size: 2.3rem !important; /* Letra reducida */
     }
     
     /* En celular, la fecha y hora se ponen una debajo de otra (en lista) */
     .pass-info-grid { 
-        grid-template-columns: 1fr; /* Una sola columna */
-        gap: 0; /* Sin huecos */
+        grid-template-columns: 1fr 1fr !important; /* Una sola columna */
+        gap: 8px !important; /* Sin huecos */
     }
     
     /* Cada dato de la lista */
     .pass-data-item { 
         padding: 12px 0; /* Espacio arriba y abajo de cada dato */
-        border-bottom: 1px solid rgba(191, 149, 63, 0.15); /* Línea dorada divisoria */
+        border-bottom: none !important;/* Línea dorada divisoria */
     }
     
     .pass-data-item:last-child { 

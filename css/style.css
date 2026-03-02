@@ -3,6 +3,7 @@
     /* --- NUEVA PALETA DE COLORES CENICIENTA --- */
     --azul-cenicienta-oscuro: #1e3c72; /* Un azul marino más suave para el fondo */
     --azul-cenicienta-fondo: #2a5298; /* Azul base para el degradado */
+    --azul-profundo-fondo: #000a1a; /* Define el color que le faltaba a tu código */
     
     /* TUS COLORES DE VESTIDO EXACTOS */
     --azul-cenicienta-fuerte: #84b6f4; 
@@ -26,18 +27,20 @@
 
 body {
     margin: 0; /* Quita espacios vacíos en las orillas de la pantalla */
+    padding: 0;
     display: flex; /* Activa un sistema para acomodar los objetos fácilmente */
     justify-content: center; /* Centra la tarjeta de izquierda a derecha */
-    align-items: flex-start; /* Hace que la invitación empiece desde arriba del celular */
+    align-items: center; /* Hace que la invitación empiece desde arriba del celular */
     min-height: 100vh; /* Asegura que el fondo cubra todo el largo de la pantalla */
+    width: 100%;
     font-family: 'Montserrat', sans-serif; /* El tipo de letra principal */
     background-color: var(--azul-profundo-fondo); /* Aplica el azul casi negro al fondo */
     background-image: 
-        radial-gradient(circle at 50% 30%, rgba(132, 182, 244, 0.3) 0%, transparent 60%), 
+        radial-gradient(circle at 50% 30%, rgba(132, 182, 244, 0.3) 0%, transparent 70%), 
         linear-gradient(180deg, var(--azul-cenicienta-oscuro) 0%, var(--azul-cenicienta-fondo) 100%);
     background-attachment: fixed;    
     overflow-x: hidden; /* Evita que la pantalla se mueva hacia los lados */
-    padding-top: 20px; /* Deja un espacio arriba para que el pase no pegue al borde */
+    
 }
 
 h1, h2 { font-family: 'Cinzel Decorative', cursive; }

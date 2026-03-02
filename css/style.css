@@ -170,39 +170,61 @@ h1, h2 { font-family: 'Cinzel Decorative', cursive; }
 }
 @keyframes rotateBorder { 100% { transform: rotate(360deg); } }
 
-.pass-inner-border {
-    position: relative; z-index: 2; border-radius: 15px; padding: 35px 20px;
-    display: flex; flex-direction: column; align-items: center; gap: 20px;
-    border: 1px solid rgba(191, 149, 63, 0.2);
+/* --- ELIMINACIÓN DE EFECTOS DE FONDO --- */
+.glass-pass::before {
+    display: none !important; /* Quita estrellas, luces flotantes y el giro del borde */
 }
 
+/* --- BLOQUE ÚNICO: INTERIOR DEL PASE (ADAPTABLE Y CON ZAPATILLA) --- */
 .pass-inner-border {
-    position: relative; z-index: 2; /* Por encima de la luz viajera */
-    border: 1px solid rgba(224, 224, 224, 0.3); /* Borde interno plateado sutil */
-    border-radius: 15px; padding: 20px; background: rgba(0, 26, 51, 0.3);
+    position: relative;
+    z-index: 2; /* Se mantiene por encima de cualquier efecto de fondo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    /* Espacios reducidos para que el pase quepa completo en el celular */
+    gap: 15px; 
+    padding: 20px 15px; 
+    
+    /* Diseño visual */
+    border: 1px solid rgba(191, 149, 63, 0.25); /* Línea dorada sutil */
+    border-radius: 15px; 
+    background: rgba(0, 26, 51, 0.4); /* Fondo oscuro para que resalte la zapatilla */
+    
+    height: auto;
+    box-sizing: border-box; /* Mantiene el tamaño exacto sin deformarse */
+    overflow: hidden; /* Necesario para que la imagen de fondo no se salga */
 }
-.pass-guest-section { text-align: center; margin-bottom: 25px; }
 
-
-
-.pass-inner-border {
-    position: relative; z-index: 2; /* Por encima de la luz viajera */
-    border: 1px solid rgba(224, 224, 224, 0.3); /* Borde interno plateado sutil */
-    border-radius: 15px; padding: 20px; background: rgba(0, 26, 51, 0.3);
+/* LA ZAPATILLA: Marca de agua sutil */
+.pass-inner-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Asegúrate de que el nombre del archivo en tu carpeta 'img' sea zapatilla.png */
+    background-image: url('../img/zapatilla1.png'); 
+    background-size: 55%; /* Tamaño elegante */
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.12; /* Muy tenue para no tapar el texto */
+    z-index: -1;
+    pointer-events: none;
 }
 
-/* El recuadro interno del pase */
-.pass-inner-border {
-    border: 1px solid rgba(191, 149, 63, 0.25); /* Línea dorada interna */
-    border-radius: 15px; /* Esquinas redondeadas del marco interno */
-    padding: 40px 25px; /* Espacio para que el texto no pegue al marco */
-    display: flex; /* Activa el ordenamiento vertical */
-    flex-direction: column; /* Pone los elementos uno debajo de otro */
-    align-items: center; /* Centra todo el contenido */
-    gap: 25px; /* Separa los bloques de texto automáticamente */
-    height: auto; /* Se ajusta solo al largo del texto */
-    box-sizing: border-box; /* Mantiene el tamaño exacto */
+/* --- SECCIÓN DEL NOMBRE DEL INVITADO (BLOQUE ÚNICO Y CORREGIDO) --- */
+.pass-guest-section { 
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    /* Reducimos este margen de 25px a 10px para que el botón NO se corte en el celular */
+    margin-bottom: 10px; 
 }
+
+
 
 /* El contenedor principal de la tarjeta */
 .pass-container {
